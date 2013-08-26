@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo", "Milo\Milo.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Web", "Milo.Web\Milo.Web.csproj", "{CEC096C3-064E-4AD7-8EAB-BBC6EABABFAC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7689E876-4726-443C-BFAA-D1B7CC8103CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,5 +24,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E238BE52-AFD7-427C-92E1-F67214FE9D0D} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
+		{CEC096C3-064E-4AD7-8EAB-BBC6EABABFAC} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
 	EndGlobalSection
 EndGlobal
