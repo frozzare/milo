@@ -1,0 +1,5 @@
+Y:\u\milo\src\Milo.Web\bin\Milo.Web.dll
+Y:\u\milo\src\Milo.Web\bin\Milo.Web.pdb
+Y:\u\milo\src\Milo.Web\obj\Debug\ResolveAssemblyReference.cache
+Y:\u\milo\src\Milo.Web\obj\Debug\Milo.Web.dll
+Y:\u\milo\src\Milo.Web\obj\Debug\Milo.Web.pdb
