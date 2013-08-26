@@ -1,5 +1,0 @@
-Y:\u\milo\src\Milo\bin\Debug\Milo.dll
-Y:\u\milo\src\Milo\bin\Debug\Milo.pdb
-Y:\u\milo\src\Milo\obj\Debug\ResolveAssemblyReference.cache
-Y:\u\milo\src\Milo\obj\Debug\Milo.dll
-Y:\u\milo\src\Milo\obj\Debug\Milo.pdb
