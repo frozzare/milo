@@ -9,12 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Web", "Milo.Web\Milo.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Core", "Milo.Core\Milo.Core.csproj", "{D8F6E1F1-D73F-4D0A-A317-5FD369260303}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Data", "Milo.Data\Milo.Data.csproj", "{9467803A-F468-4C87-BBB4-55E0C3544384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9467803A-F468-4C87-BBB4-55E0C3544384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9467803A-F468-4C87-BBB4-55E0C3544384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9467803A-F468-4C87-BBB4-55E0C3544384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9467803A-F468-4C87-BBB4-55E0C3544384}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEC096C3-064E-4AD7-8EAB-BBC6EABABFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEC096C3-064E-4AD7-8EAB-BBC6EABABFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC096C3-064E-4AD7-8EAB-BBC6EABABFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +38,7 @@ Global
 		{E238BE52-AFD7-427C-92E1-F67214FE9D0D} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
 		{CEC096C3-064E-4AD7-8EAB-BBC6EABABFAC} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
 		{D8F6E1F1-D73F-4D0A-A317-5FD369260303} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
+		{9467803A-F468-4C87-BBB4-55E0C3544384} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Milo\Milo.csproj
