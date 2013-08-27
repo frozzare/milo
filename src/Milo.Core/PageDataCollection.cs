@@ -49,9 +49,10 @@ namespace Milo.Core
 		/// <param name="pageData">Page data.</param>
 		public void Add (PageData pageData) 
 		{
-			if (pageData != null) {
-				this._pageList.Add (pageData);
-			}
+			if (pageData == null)
+				return;
+		
+			this._pageList.Add (pageData);
 		}
 
 		/// <Docs>The item to remove from the current collection.</Docs>
