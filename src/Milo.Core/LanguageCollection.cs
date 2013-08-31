@@ -51,6 +51,18 @@ namespace Milo.Core
 			return this._languages.Remove (language);
 		}
 
+        /// <summary>
+        /// Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection" /> is synchronized (thread safe).
+        /// </summary>
+        /// <returns>true if access to the <see cref="T:System.Collections.ICollection" /> is synchronized (thread safe); otherwise, false.</returns>
+        public bool IsSynchronized
+        {
+            get
+            {
+                return false;
+            }
+        }
+
 		/// <summary>
 		/// Gets the enumerator.
 		/// </summary>
