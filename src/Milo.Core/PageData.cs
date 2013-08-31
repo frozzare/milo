@@ -12,7 +12,7 @@ namespace Milo.Core
         /// <summary>
         /// The languages for this page.
         /// </summary>
-        private LanguageCollection _languages;
+        private List<string> _languages;
 
         /// <summary>
         /// Gets or sets the name of the page.
@@ -23,18 +23,18 @@ namespace Milo.Core
         /// <summary>
         /// Initializes a new instance of the <see cref="Milo.Core.PageData"/> class.
         /// </summary>
-        public PageData ()
+        public PageData()
         {
-            _languages = new LanguageCollection ();
+            this._languages = new List<string>();
         }
 
         /// <summary>
         /// Gets the page languages.
         /// </summary>
         /// <value>The page languages.</value>
-        public virtual LanguageCollection PageLanguages 
+        public virtual List<string> PageLanguages
         {
-            get 
+            get
             {
                 return this._languages;
             }

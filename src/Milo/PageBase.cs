@@ -1,10 +1,11 @@
 using System;
-using Milo.Core;
+using System.Web.UI;
 using System.Collections.Generic;
+using Milo.Core;
 
 namespace Milo
 {
-    public class PageBase : IPage
+    public abstract class PageBase : Page
     {
         public PageBase ()
         {
@@ -12,7 +13,7 @@ namespace Milo
 
         public List<PageData> GetChildren (int pageLink) 
         {
-
+            return new List<PageData>();
         }
     }
 }
