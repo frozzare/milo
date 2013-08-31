@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 namespace Milo
 {
-	public class PageBase : IPage
-	{
-		public PageBase ()
-		{
-		}
+    public class PageBase : IPage
+    {
+        public PageBase ()
+        {
+        }
 
-		public List<PageData> GetChildren (int pageLink) 
-		{
+        public List<PageData> GetChildren (int pageLink) 
+        {
 
-		}
-	}
+        }
+    }
 }
 

@@ -2,11 +2,11 @@ using System;
 
 namespace Milo.Data
 {
-	public class MyClass
-	{
-		public MyClass ()
-		{
-		}
-	}
+    public class MyClass
+    {
+        public MyClass ()
+        {
+        }
+    }
 }
 
