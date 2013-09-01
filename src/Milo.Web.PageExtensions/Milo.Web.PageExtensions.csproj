@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E238BE52-AFD7-427C-92E1-F67214FE9D0D}</ProjectGuid>
+    <ProjectGuid>{37FEF332-615D-4CE1-86C1-4D4C59A74795}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Milo</RootNamespace>
-    <AssemblyName>Milo</AssemblyName>
+    <RootNamespace>Milo.Web.PageExtensions</RootNamespace>
+    <AssemblyName>Milo.Web.PageExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,26 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Milo.cs" />
+    <Compile Include="EmptyPageData.cs" />
+    <Compile Include="ICurrentPage.cs" />
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="PageBase.cs">
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Milo.Core\Milo.Core.csproj">
       <Project>{d8f6e1f1-d73f-4d0a-a317-5fd369260303}</Project>
       <Name>Milo.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Milo.Web.PageExtensions\Milo.Web.PageExtensions.csproj">
-      <Project>{37fef332-615d-4ce1-86c1-4d4c59a74795}</Project>
-      <Name>Milo.Web.PageExtensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Milo.Web\Milo.Web.csproj">
-      <Project>{680f48f5-9cd1-41a8-9144-1168bc60df41}</Project>
-      <Name>Milo.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

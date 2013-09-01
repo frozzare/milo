@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,13 +43,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PageBaseTest.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Milo.Core\Milo.Core.csproj">
+      <Project>{D8F6E1F1-D73F-4D0A-A317-5FD369260303}</Project>
+      <Name>Milo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milo.Web.PageExtensions\Milo.Web.PageExtensions.csproj">
+      <Project>{37FEF332-615D-4CE1-86C1-4D4C59A74795}</Project>
+      <Name>Milo.Web.PageExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milo\Milo.csproj">
+      <Project>{e238be52-afd7-427c-92e1-f67214fe9d0d}</Project>
+      <Name>Milo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

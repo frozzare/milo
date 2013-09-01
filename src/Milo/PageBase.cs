@@ -1,19 +1,72 @@
 using System;
+using System.ComponentModel;
 using System.Web.UI;
 using System.Collections.Generic;
 using Milo.Core;
+using Milo.Web.PageExtensions;
 
 namespace Milo
 {
-    public abstract class PageBase : Page
+    public abstract class PageBase : Page, ICurrentPage
     {
-        public PageBase ()
+        /// <summary>
+        /// The CurrentPage handler
+        /// </summary>
+        private ICurrentPage _currentPageHandler;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageBase"/> class.
+        /// </summary>
+        protected PageBase()
         {
         }
 
-        public List<PageData> GetChildren (int pageLink) 
+        /// <summary>
+        /// Gets or sets the current page handler.
+        /// </summary>
+        /// <value>
+        /// The current page handler.
+        /// </value>
+        public ICurrentPage CurrentPageHandler
+        {
+            get
+            {
+                return this._currentPageHandler ?? (this._currentPageHandler = (ICurrentPage) new EmptyPageData());
+            }
+            set
+            {
+                this._currentPageHandler = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets the children.
+        /// </summary>
+        /// <param name="pageLink">The page link.</param>
+        /// <returns>Children list</returns>
+        public List<PageData> GetChildren(int pageLink)
         {
             return new List<PageData>();
+        }
+
+        /// <summary>
+        /// Gets or sets the current page.
+        /// </summary>
+        /// <value>
+        /// The current page.
+        /// </value>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        public virtual PageData CurrentPage
+        {
+            get
+            {
+                return this.CurrentPageHandler.CurrentPage;
+            }
+            set
+            {
+                this.CurrentPageHandler.CurrentPage = value;
+            }
         }
     }
 }
