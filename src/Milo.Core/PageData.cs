@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Milo.Core.Interfaces;
 
 namespace Milo.Core
 {
@@ -7,7 +8,7 @@ namespace Milo.Core
     /// Represents a Page
     /// </summary>
     [Serializable]
-    public class PageData
+    public class PageData : IPageData
     {
         /// <summary>
         /// The languages for this page.
@@ -15,10 +16,27 @@ namespace Milo.Core
         private List<string> _languages;
 
         /// <summary>
+        /// Gets the parent page.
+        /// </summary>
+        /// <value>
+        /// The parent page.
+        /// </value>
+        public PageData ParentPage
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the name of the page.
         /// </summary>
         /// <value>The name of the page.</value>
-        public string PageName { get; set; }
+        public string PageName
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Gets or sets the name of the page type.
@@ -26,7 +44,10 @@ namespace Milo.Core
         /// <value>
         /// The name of the page type.
         /// </value>
-        public string PageTypeName { get; set; }
+        public string PageTypeName
+        {
+            get; set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the page is in edit mode.
@@ -54,6 +75,25 @@ namespace Milo.Core
             {
                 return this._languages;
             }
+        }
+
+        /// <summary>
+        /// Gets children pages.
+        /// </summary>
+        /// <returns>The children pages.</returns>
+        public PageDataCollection GetChildren()
+        {
+            return new PageDataCollection();
+        }
+
+        /// <summary>
+        /// Gets the property.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
+        public IProperty GetProperty(string key)
+        {
+            return null;
         }
     }
 }

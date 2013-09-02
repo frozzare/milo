@@ -35,7 +35,9 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="IPage.cs" />
+    <Compile Include="Interfaces\IPageData.cs" />
+    <Compile Include="Interfaces\IProperty.cs" />
+    <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="PageData.cs" />
     <Compile Include="PageDataCollection.cs" />
   </ItemGroup>

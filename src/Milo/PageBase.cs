@@ -3,11 +3,12 @@ using System.ComponentModel;
 using System.Web.UI;
 using System.Collections.Generic;
 using Milo.Core;
+using Milo.Core.Interfaces;
 using Milo.Web.PageExtensions;
 
 namespace Milo
 {
-    public abstract class PageBase : Page, ICurrentPage
+    public abstract class PageBase : Page, IPage, ICurrentPage
     {
         /// <summary>
         /// The CurrentPage handler
@@ -42,11 +43,10 @@ namespace Milo
         /// <summary>
         /// Gets the children.
         /// </summary>
-        /// <param name="pageLink">The page link.</param>
         /// <returns>Children list</returns>
-        public List<PageData> GetChildren(int pageLink)
+        public PageDataCollection GetChildren()
         {
-            return new List<PageData>();
+            return new PageDataCollection();
         }
 
         /// <summary>
