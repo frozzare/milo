@@ -10,7 +10,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Milo</RootNamespace>
     <AssemblyName>Milo</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +28,17 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MonoRelease|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\MonoRelease</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MonoDebug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\MonoDebug</OutputPath>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
@@ -51,15 +62,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Milo.Core\Milo.Core.csproj">
-      <Project>{d8f6e1f1-d73f-4d0a-a317-5fd369260303}</Project>
+      <Project>{D8F6E1F1-D73F-4D0A-A317-5FD369260303}</Project>
       <Name>Milo.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Milo.Web.PageExtensions\Milo.Web.PageExtensions.csproj">
-      <Project>{37fef332-615d-4ce1-86c1-4d4c59a74795}</Project>
+      <Project>{37FEF332-615D-4CE1-86C1-4D4C59A74795}</Project>
       <Name>Milo.Web.PageExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\Milo.Web\Milo.Web.csproj">
-      <Project>{680f48f5-9cd1-41a8-9144-1168bc60df41}</Project>
+      <Project>{680F48F5-9CD1-41A8-9144-1168BC60DF41}</Project>
       <Name>Milo.Web</Name>
     </ProjectReference>
   </ItemGroup>
