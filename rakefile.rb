@@ -4,6 +4,7 @@ require 'albacore'
 require 'rake/clean'
 
 OUTPUT = 'build'
+OUTPUT_ASSEMBLY = 'src/SharedAssemblyInfo.cs'
 CONFIGURATION = 'Release'
 CONFIGURATIONMONO = 'MonoRelease'
 SOLUTION_FILE = 'src/Milo.sln'
@@ -13,25 +14,26 @@ Albacore.configure do |config|
     config.msbuild.use :net4
 end
 
-desc "Update shared assemblyinfo file for the build"
+desc 'Update shared assemblyinfo file for the build'
 assemblyinfo :assembly_info => [:clean] do |asm|
-    asm.company_name = "Nancy"
-    asm.product_name = "Nancy"
-    asm.title = "Nancy"
-    asm.description = "A Sinatra inspired web framework for the .NET platform"
-    asm.copyright = "Copyright (C) Andreas Hakansson, Steven Robbins and contributors"
-    asm.output_file = 'test.cs'
+    asm.company_name = 'Milo'
+    asm.product_name = 'Milo'
+    asm.title = 'Milo'
+    asm.description = 'A content manangement system for the .NET platform'
+    asm.copyright = 'Copyright (C) Fredirk Forsmo, Caroline Millgårdh and contributors'
+    asm.output_file = OUTPUT_ASSEMBLY
+    asm.version = '0.1.0'
 end
 
-desc "Compile solution file"
+desc 'Compile solution file'
 msbuild :compile => [:assembly_info] do |msb|
-    msb.properties = { :configuration => CONFIGURATION, "VisualStudioVersion" => ENV['VS110COMNTOOLS'] ? "11.0" : "10.0" }
+    msb.properties = { :configuration => CONFIGURATION, 'VisualStudioVersion' => ENV['VS110COMNTOOLS'] ? '11.0' : '10.0' }
     msb.targets :Clean, :Build
     msb.solution = SOLUTION_FILE
 end
 
-desc "Compile solution file for Mono"
+desc 'Compile solution file for Mono'
 xbuild :compilemono => [:assembly_info] do |xb|
     xb.solution = SOLUTION_FILE
-    xb.properties = { :configuration => CONFIGURATIONMONO, "TargetFrameworkProfile" => "", "TargetFrameworkVersion" => "v4.0" }
+    xb.properties = { :configuration => CONFIGURATIONMONO, 'TargetFrameworkProfile' => '', 'TargetFrameworkVersion' => 'v4.0' }
 end

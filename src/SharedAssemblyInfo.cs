@@ -1,11 +1,8 @@
-using System.Runtime.InteropServices;
 using System.Reflection;
-
+using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Milo")]
-[assembly: AssemblyDescription("Content Management System in .NET")]
+[assembly: AssemblyDescription("A content manangement system for the .NET platform")]
 [assembly: AssemblyCompany("Milo")]
 [assembly: AssemblyProduct("Milo")]
 [assembly: AssemblyCopyright("Copyright (C) Fredirk Forsmo, Caroline Millgårdh and contributors")]
 [assembly: AssemblyVersion("0.1.0")]
-[assembly: AssemblyInformationalVersion("0.1.0")]
-
