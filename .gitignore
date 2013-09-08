@@ -24,3 +24,4 @@ _[Rr]e[Ss]harper.*/
 Thumbs.db
 .idea
 Gemfile.lock
+src/packages/*

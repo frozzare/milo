@@ -59,6 +59,5 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Ny mapp\" />
   </ItemGroup>
 </Project>

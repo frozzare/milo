@@ -66,4 +66,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="MVC\" />
+  </ItemGroup>
 </Project>

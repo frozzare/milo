@@ -8,4 +8,3 @@ namespace Milo.Core
 		public string Description { get; set; }
 	}
 }
-
