@@ -50,6 +50,15 @@
     <Compile Include="Interfaces\IPage.cs" />
     <Compile Include="PageData.cs" />
     <Compile Include="PageDataCollection.cs" />
+    <Compile Include="RenderingEngine.cs" />
+    <Compile Include="PropertyCollection.cs" />
+    <Compile Include="PropertyData.cs" />
+    <Compile Include="Attributes\AttributeBase.cs" />
+    <Compile Include="Attributes\PropertyDefinitionAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+    <Folder Include="Ny mapp\" />
+  </ItemGroup>
 </Project>
