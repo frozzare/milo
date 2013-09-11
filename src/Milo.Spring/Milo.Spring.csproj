@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D8F6E1F1-D73F-4D0A-A317-5FD369260303}</ProjectGuid>
+    <ProjectGuid>{9467803A-F468-4C87-BBB4-55E0C3544384}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Milo.Core</RootNamespace>
-    <AssemblyName>Milo.Core</AssemblyName>
+    <RootNamespace>Milo.Spring</RootNamespace>
+    <AssemblyName>Milo.Spring</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,22 +42,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="Interfaces\IPageData.cs" />
-    <Compile Include="Interfaces\IPageSource.cs" />
-    <Compile Include="Interfaces\IProperty.cs" />
-    <Compile Include="Interfaces\IPage.cs" />
-    <Compile Include="PageData.cs" />
-    <Compile Include="PageDataCollection.cs" />
-    <Compile Include="PageLink.cs" />
-    <Compile Include="RenderingEngine.cs" />
-    <Compile Include="PropertyCollection.cs" />
-    <Compile Include="PropertyData.cs" />
-    <Compile Include="Attributes\AttributeBase.cs" />
-    <Compile Include="Attributes\PropertyDefinitionAttribute.cs" />
+    <Compile Include="Interfaces\IAdapter.cs" />
+    <Compile Include="Spring.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup />
 </Project>

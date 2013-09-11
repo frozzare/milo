@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo", "Milo\Milo.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Core", "Milo.Core\Milo.Core.csproj", "{D8F6E1F1-D73F-4D0A-A317-5FD369260303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Data", "Milo.Data\Milo.Data.csproj", "{9467803A-F468-4C87-BBB4-55E0C3544384}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Spring", "Milo.Spring\Milo.Spring.csproj", "{9467803A-F468-4C87-BBB4-55E0C3544384}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Web", "Milo.Web\Milo.Web.csproj", "{680F48F5-9CD1-41A8-9144-1168BC60DF41}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Demo.WebForms", "Milo.Demo.WebForms\Milo.Demo.WebForms.csproj", "{762C14F6-EE57-4190-812B-9F50B2D4E18A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Web.UI", "Milo.Web.UI\Milo.Web.UI.csproj", "{2F2198A3-B1E2-4295-9E3E-1C6709EE4238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milo.Spring.Tests", "Milo.Spring.Tests\Milo.Spring.Tests.csproj", "{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,14 @@ Global
 		{2F2198A3-B1E2-4295-9E3E-1C6709EE4238}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
 		{2F2198A3-B1E2-4295-9E3E-1C6709EE4238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F2198A3-B1E2-4295-9E3E-1C6709EE4238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.MonoDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.MonoDebug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.MonoRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +117,7 @@ Global
 		{37FEF332-615D-4CE1-86C1-4D4C59A74795} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
 		{2F2198A3-B1E2-4295-9E3E-1C6709EE4238} = {7689E876-4726-443C-BFAA-D1B7CC8103CF}
 		{4FB7426E-FA9A-4ADD-8AF6-32982E4F2DA2} = {7C8460DC-C9DB-4EB6-9266-8B39726A2D3E}
+		{1FFCFDC0-CE39-4622-B7EF-E595E82374BA} = {7C8460DC-C9DB-4EB6-9266-8B39726A2D3E}
 		{762C14F6-EE57-4190-812B-9F50B2D4E18A} = {DB399CBF-B01D-4CA9-B36A-03A836EE186A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution

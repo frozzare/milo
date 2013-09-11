@@ -20,7 +20,7 @@ namespace Milo
         {
             get
             {
-                return _instance ?? (_instance = new Milo());
+                return _instance;
             }
         }
 
