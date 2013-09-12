@@ -1,0 +1,173 @@
+
+body {
+  // background: #2d3039;
+  background: #f2f2f2;
+  font-family: 'Ubuntu', sans-serif;
+  div.view {
+	h1 {
+	  color: white;
+	}
+	aside {
+	  float: left;
+	  width: 250px;
+	  background: #3b4148;
+	  margin: -20px 0;
+	  margin-right: 20px;
+	  height: 1000px;
+	  ul {
+		padding: 0;
+		li {
+		  list-style: none;
+		  padding: 5px;
+		  ul {
+			padding-left: 10px;
+		  }
+		  background: #343940;
+		  &.active {
+			background: none;
+			li {
+			  background: none;
+			}
+			a {
+
+			}
+		  }
+		  a {
+			text-decoration: none;
+			color: #f1f1f1;
+			width: 100%;
+			padding: 5px;
+			&:hover {
+			}
+		  }
+		}
+	  }
+	}
+	#main {
+	}
+	.login-1 {
+	  width: 250px;
+	  padding: 10px;
+	  height: 250px;
+	  margin: 0 auto;
+	  h1 {
+		text-align: center;
+	  }
+	  p {
+		text-align: center;
+	  }
+	  input[type="text"],
+	  input[type="password"] {
+		background: #3b4148;
+		border: none;
+		color: white;
+		width: 240px;
+		padding: 10px;
+	  }
+	  button {
+		background: #343940;
+		border: none;
+		color: white;
+		width: 100%;
+		width: 120px;
+		float: right;
+		padding: 10px;
+		margin-right: -10px;
+	  }
+	  a {
+		color: #bbc0c2;
+		text-decoration: none;
+		padding: 10px;
+		float: left;
+	  }
+	  img {
+		margin-top: 50px;
+	  }
+	}
+
+	.login-2 {
+	  width: 250px;
+	  padding: 10px;
+	  margin: 5% auto;
+	  background: white;
+	  //border-radius: 5px;
+	  h1 {
+		text-align: center;
+		color: #d4dee0;
+		font-size: 40px;
+		margin: 10px 0 20px;
+	  }
+	  p {
+		text-align: center;
+	  }
+	  .form {
+		padding: 0 0 10px 0;
+		input[type="text"],
+		input[type="password"] {
+		  border: 0;
+		  padding: 10px;
+		  background: #f2f2f2;
+		}
+		.rember {
+		  width: 105px;
+		  float: left;
+		  color: #d4dee0;
+		  margin-left: 20px;
+		  margin-top: 10px;
+		  font-size: 14px;
+		  input {
+			background: white;
+			border: none;
+		  }
+		  display: none;
+		}
+		button {
+		  background: #599bd5;
+		  width: 110px;
+		  &.l {
+			margin-left: 15px;
+			width: 220px;
+		  }
+		  padding: 10px 0px;
+		  color: white;
+		  border: 0;
+		  &:hover {
+			background: #599bd5;
+			color: white;
+		  }
+		  margin-bottom: 10px;
+		}
+		p img {
+		  padding: 0;
+		  margin: 0;
+		}
+		a {
+		  background: white;
+		  color: #d4dee0;
+		  font-size: 12px;
+		  float: right;
+		  margin-top: -20px;
+		  margin-right: 16px;
+		  &:hover {
+			color: #539cd2;
+			text-decoration: underline;
+		  }
+		  text-decoration: none;
+		}
+	  }
+	}
+  }
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:    #bbc0c2;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #bbc0c2;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #bbc0c2;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:    #bbc0c2;
+}

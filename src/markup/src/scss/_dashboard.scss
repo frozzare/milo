@@ -1,0 +1,228 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Colors */
+
+// Light
+
+$headerBackgroundColor: #EEE;
+$menuItemBorderColor: #DFDFDF;
+$menuItemHoverBackgroundColor: #DFDFDF;
+$menuItemTextColor: #1570A6;
+$headerBorderColor: #DFDFDF;
+
+// Dark
+
+$headerBackgroundColor: #444;
+$menuItemBorderColor: #555;
+$menuItemHoverBackgroundColor: #555;
+$menuItemTextColor: #DFDFDF;
+$headerBorderColor: #666666;
+
+// Blue
+
+$headerBackgroundColor: #007ACC;
+$menuItemBorderColor: #006eb7;
+$menuItemHoverBackgroundColor: #205081;
+$menuItemTextColor: #FFFFFF;
+$headerBorderColor: #205081;
+
+$asideBig: 200px;
+$asideSmall: 50px;
+
+
+/* End */
+
+body {
+
+  &> header {
+    height: 33px;
+    line-height: 33px;
+
+    font-family: Segoe UI, Tahoma, Arial, Verdana;
+    font-size: 12px;
+    margin-bottom: 2px;
+
+    .left {
+      background: $headerBackgroundColor;
+      border-bottom: $headerBorderColor 2px solid;
+      height: 33px;
+      line-height: 33px;
+      width: $asideBig;
+      float: left;
+    }
+
+    .right {
+      background: $headerBackgroundColor;
+      border-bottom: $headerBorderColor 2px solid;
+      margin-left: $asideBig;
+      height: 33px;
+      line-height: 33px;
+    }
+
+    nav {
+      ul {
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        &.menu {
+          &> li {
+            &:first-child {
+              border-left: 1px $menuItemBorderColor solid;
+            }
+          }
+        }
+        li {
+          border-right: 1px $menuItemBorderColor solid;
+          display: inline-block;
+          max-width: 180px;
+          padding: 0px 5px;
+          margin: 0;
+          color: $menuItemTextColor;
+          text-decoration: none;
+          float: left;
+          background-size: contain;
+          font-size: 12px;
+          a {
+            color: $menuItemTextColor;
+            text-decoration: none;
+          }
+          &:hover {
+            background: $menuItemHoverBackgroundColor;
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+        &.pull-right {
+          li {
+            &:first-child {
+              border-left: 1px $menuItemBorderColor solid;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Dark
+
+  $asideBackgroundColor: #27292f;
+
+  $asideTabsBackgroundColor: #2f323a;
+  $asideTabsBorderColor: #232323;
+
+  $asideMenuHeadingColor: #F4F4F6;
+  $asideMenuItemColor: #FFFFFF;
+  $asideMenuItemHoverBackgroundColor: #1e2025;
+
+  $asideBackgroundColor: #edf0f1;
+
+  $asideTabsBackgroundColor: none;
+  $asideTabsBorderColor: none;
+
+  $asideMenuHeadingColor: #636f7f;
+  $asideMenuItemColor: #636f7f;
+  $asideMenuItemHoverBackgroundColor: none;
+
+  &> main {
+    height: 100%;
+    aside {
+      float: left;
+      border-right: #DFDFDF solid 1px;
+      background: $menuItemHoverBackgroundColor;
+      background: $asideBackgroundColor;
+      //background: #F4F4F6; // $menuItemHoverBackgroundColor
+      height: 100%;
+      //&.big {
+        width: $asideBig;
+      //}
+      &.small {
+        width: $asideSmall;
+      }
+
+      &> ul.tabs {
+        margin: 0;
+        padding: 0;
+        background: $menuItemHoverBackgroundColor;
+        border-bottom: 1px $asideTabsBorderColor solid;
+        li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: inline-block;
+          font-size: 12px;
+          padding: 10px 10px;
+          a {
+            color: white;
+            text-decoration: none;
+          }
+          &:first-child {
+            margin-left: 5px;
+          }
+          &:first-child, &:hover {
+            background: $asideBackgroundColor;
+            border-bottom: 1px $asideBackgroundColor solid;
+            margin-bottom: -1px;
+            border-right: 1px $asideTabsBorderColor solid;
+            border-top: 2px #CFCFCF solid;
+            a {
+              color: $asideMenuItemColor;
+            }
+          }
+        }
+      }
+
+      &> nav {
+        padding: 5px;
+        ul {
+          margin: 0;
+          padding: 0;
+          &> li {
+            margin: 0;
+            padding: 10px 10px;
+            &.active {
+            }
+            &> a {
+              text-transform: uppercase;
+              color: $asideMenuHeadingColor;
+              text-decoration: none;
+              font-size: 10px;
+              padding: 5px 10px;
+              letter-spacing: 1px;
+            }
+            ul {
+              padding-bottom: 10px;
+              padding-left: 30px;
+              li {
+                margin: 10px -10px -10px -40px;
+                padding: 10px 0px 10px 30px;
+                list-style: none;
+                a {
+                  color: $asideMenuItemColor;
+                  text-decoration: none;
+                  font-size: 12px;
+                  text-transform: none;
+                }
+              }
+            }
+          }
+
+          .treeview {
+            background: $asideBackgroundColor;
+            a {
+              &:hover {
+                color: $asideMenuItemColor;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
