@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IAdapter.cs" />
+    <Compile Include="Interfaces\ISpring.cs" />
     <Compile Include="Spring.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
