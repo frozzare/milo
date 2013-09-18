@@ -1,7 +1,8 @@
 ﻿namespace Milo.Spring.Interfaces
 {
-    public interface IAdapter
+    public interface IDatabase : ILinq
     {
+        dynamic Insert (dynamic model);
         bool Disconnect();
     }
 }

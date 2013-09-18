@@ -55,7 +55,7 @@ namespace Milo.Tests
         /// Abouts the page tes.
         /// </summary>
         [Fact]
-        public void AboutPageTes()
+        public void AboutPageTest()
         {
             CurrentPageHandler = new AboutPage();
             Assert.NotNull(CurrentPage);

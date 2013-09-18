@@ -11,6 +11,8 @@
     <AssemblyName>Milo.Spring.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,11 +45,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Adapters\RavenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Milo.Core\Milo.Core.csproj">
+      <Project>{d8f6e1f1-d73f-4d0a-a317-5fd369260303}</Project>
+      <Name>Milo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milo.Spring\Milo.Spring.csproj">
+      <Project>{9467803a-f468-4c87-bbb4-55e0c3544384}</Project>
+      <Name>Milo.Spring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milo.Web.PageExtensions\Milo.Web.PageExtensions.csproj">
+      <Project>{37fef332-615d-4ce1-86c1-4d4c59a74795}</Project>
+      <Name>Milo.Web.PageExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milo\Milo.csproj">
+      <Project>{e238be52-afd7-427c-92e1-f67214fe9d0d}</Project>
+      <Name>Milo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
