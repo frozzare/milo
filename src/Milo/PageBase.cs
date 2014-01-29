@@ -1,7 +1,5 @@
-using System;
 using System.ComponentModel;
 using System.Web.UI;
-using System.Collections.Generic;
 using Milo.Core;
 using Milo.Core.Interfaces;
 using Milo.Web.PageExtensions;
@@ -32,11 +30,11 @@ namespace Milo
         {
             get
             {
-                return this._currentPageHandler ?? (this._currentPageHandler = (ICurrentPage) new EmptyPageData());
+                return _currentPageHandler ?? (_currentPageHandler = new EmptyPageData());
             }
             set
             {
-                this._currentPageHandler = value;
+                _currentPageHandler = value;
             }
         }
 
@@ -61,11 +59,11 @@ namespace Milo
         {
             get
             {
-                return this.CurrentPageHandler.CurrentPage;
+                return CurrentPageHandler.CurrentPage;
             }
             set
             {
-                this.CurrentPageHandler.CurrentPage = value;
+                CurrentPageHandler.CurrentPage = value;
             }
         }
     }

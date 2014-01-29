@@ -31,7 +31,7 @@ namespace Milo.Tests
             {
                 if (value != null)
                 {
-                    this.CurrentPage = value;
+                    CurrentPage = value;
                 }
             }
         }
