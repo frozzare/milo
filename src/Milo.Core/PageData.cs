@@ -62,7 +62,7 @@ namespace Milo.Core
         /// </summary>
         public PageData()
         {
-            this._languages = new List<string>();
+            _languages = new List<string>();
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Milo.Core
         {
             get
             {
-                return this._languages;
+                return _languages;
             }
         }
 

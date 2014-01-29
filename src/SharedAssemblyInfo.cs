@@ -4,5 +4,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("A content manangement system for the .NET platform")]
 [assembly: AssemblyCompany("Milo")]
 [assembly: AssemblyProduct("Milo")]
-[assembly: AssemblyCopyright("Copyright (C) Fredirk Forsmo, Caroline Millgårdh and contributors")]
+[assembly: AssemblyCopyright("Copyright (C) Fredirk Forsmo and contributors")]
 [assembly: AssemblyVersion("0.1.0")]
