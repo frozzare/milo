@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Milo.Spring.Interfaces;
+using Milo.Spring.Interfaces.Adapters;
 using Raven.Client;
 using Raven.Client.Document;
-using Raven.Client.Extensions;
 
 namespace Milo.Spring.Adapters
 {
-    public class Raven : IAdapter, IDatabase
+    /// <summary>
+    /// Raven database client.
+    /// </summary>
+    public class Raven : IAdapter, IDatabase, IRaven
     {
         /// <summary>
         /// Gets or sets the URL.
@@ -30,7 +30,7 @@ namespace Milo.Spring.Adapters
         /// <summary>
         /// The Document store instance.
         /// </summary>
-        private IDocumentStore _store { get; set; }
+        private IDocumentStore Store { get; set; }
 
         /// <summary>
         /// Prevents a default instance of the <see cref="Raven"/> class from being created.
@@ -42,12 +42,11 @@ namespace Milo.Spring.Adapters
             Url = url;
             DatabaseName = databaseName;
 
-            _store = new DocumentStore
-            {
+            Store = new DocumentStore {
                 Url = url
             }.Initialize();
 
-           //_store.DatabaseCommands.EnsureDatabaseExists(DatabaseName);
+           // Store.DatabaseCommands.EnsureDatabaseExists(DatabaseName);
         }
 
         /// <summary>
@@ -57,7 +56,7 @@ namespace Milo.Spring.Adapters
         /// <returns>The entity.</returns>
         public dynamic Insert(dynamic entity)
         {
-            using (var session = _store.OpenSession())
+            using (var session = Store.OpenSession())
             {
                 session.Store(entity);
                 session.SaveChanges();
@@ -66,16 +65,30 @@ namespace Milo.Spring.Adapters
         }
 
         /// <summary>
-        /// Wheres the specified predicate.
+        /// Query Raven result.
         /// </summary>
-        /// <typeparam name="TEntity">The type of the entity.</typeparam>
-        /// <param name="predicate">The predicate.</param>
-        /// <returns>IEnumerable list with entities.</returns>
-        public IEnumerable<TEntity> Where<TEntity>(Func<TEntity, bool> predicate)
+        /// <typeparam name="T">The entity to use</typeparam>
+        /// <returns>Query result</returns>
+        public IEnumerable<T> Query<T>()
         {
-            using (var session = _store.OpenSession())
+            using (var session = Store.OpenSession())
             {
-                return session.Query<TEntity>().Where(predicate).AsEnumerable();
+                return session.Query<T>();
+            }
+        }
+
+        /// <summary>
+        /// Query Raven result.
+        /// </summary>
+        /// <typeparam name="T">The entity to use</typeparam>
+        /// <param name="indexName">Index name</param>
+        /// <param name="isMapReduce">Is map reduce?</param>
+        /// <returns>Query result</returns>
+        public IEnumerable<T> Query<T>(string indexName, bool isMapReduce = false)
+        {
+            using (var session = Store.OpenSession())
+            {
+                return session.Query<T>(indexName, isMapReduce);
             }
         }
 
@@ -97,7 +110,7 @@ namespace Milo.Spring.Adapters
         /// <returns>True.</returns>
         public bool Disconnect()
         {
-            _store = null;
+            Store = null;
             return true;
         }
     }

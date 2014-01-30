@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\Raven.cs" />
+    <Compile Include="Interfaces\Adapters\IRaven.cs" />
     <Compile Include="Interfaces\IAdapter.cs" />
     <Compile Include="Interfaces\IDatabase.cs" />
     <Compile Include="Interfaces\ILinq.cs" />

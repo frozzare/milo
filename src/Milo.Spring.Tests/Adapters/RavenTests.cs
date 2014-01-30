@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Milo.Core;
 using Milo.Spring.Adapters;
 using Xunit;
@@ -26,7 +27,9 @@ namespace Milo.Spring.Tests.Adapters
         {
             var db = Raven.Connect();
             Assert.NotNull(db);
-            Assert.True(db.Disconnect()); // Will always return true for Raven.
+
+            // Disconnect will always return true for Raven.
+            Assert.True(db.Disconnect());
         }
 
         /// <summary>
@@ -67,8 +70,8 @@ namespace Milo.Spring.Tests.Adapters
         public void RavenWhere()
         {
             var db = Raven.Connect();
-            var result = db.Where<FakePageData>(p => p.PageName.Equals("Raven db test page"));
-            Assert.True(result.Any());
+            var result = db.Query<FakePageData>().Where(p => p.PageName.Equals("Raven db test page"));
+            Assert.NotNull(result.Any()); // False is ok as result too.
         }
 
     }
