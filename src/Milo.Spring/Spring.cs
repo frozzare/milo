@@ -7,7 +7,7 @@ namespace Milo.Spring
     /// </summary>
     public class Spring : ISpring
     {
-        private static Spring _instance;
+        private static readonly Spring _instance;
 
         /// <summary>
         /// Gets the instance.

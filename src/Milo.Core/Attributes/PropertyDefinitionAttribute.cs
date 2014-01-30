@@ -1,6 +1,4 @@
-using System;
-
-namespace Milo.Core
+namespace Milo.Core.Attributes
 {
 	public class PropertyDefinitionAttribute : AttributeBase
 	{

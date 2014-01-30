@@ -46,7 +46,7 @@ namespace Milo.Spring.Adapters
                 Url = url
             }.Initialize();
 
-           // Store.DatabaseCommands.EnsureDatabaseExists(DatabaseName);
+           //Store.DatabaseCommands.EnsureDatabaseExists(DatabaseName);
         }
 
         /// <summary>

@@ -7,12 +7,12 @@ namespace Milo.Core
 	/// <summary>
 	/// Property data collection.
 	/// </summary>
-	public class PropertyDataCollection : IList<PropertyData>, ICollection<PropertyData>, IEnumerable<PropertyData>, IList, ICollection, IEnumerable
+	public class PropertyDataCollection : IList<PropertyData>, IList
 	{
 		/// <summary>
 		/// The page list.
 		/// </summary>
-		private List<PropertyData> _propertyList;
+		private readonly List<PropertyData> _propertyList;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Milo.Core.PropertyDataCollection"/> class.
@@ -32,13 +32,16 @@ namespace Milo.Core
 		{
 			get
 			{
-				return this._propertyList[index];
+				return _propertyList[index];
 			}
 			set
 			{
-				if (value == null)
-					throw new ArgumentNullException("value", "Cannot add null object to PropertyDataCollection");
-				this._propertyList[index] = value;
+			    if (value == null)
+			    {
+			        throw new ArgumentNullException("value", "Cannot add null object to PropertyDataCollection");
+			    }
+
+			    _propertyList[index] = value;
 			}
 		}
 
@@ -50,7 +53,7 @@ namespace Milo.Core
 		{
 			get
 			{
-				return this._propertyList.Count;
+				return _propertyList.Count;
 			}
 		}
 
@@ -62,7 +65,7 @@ namespace Milo.Core
 		{
 			get
 			{
-				return this._propertyList.ToArray();
+				return _propertyList.ToArray();
 			}
 		}
 
@@ -106,9 +109,9 @@ namespace Milo.Core
 		/// Initializes a new instance of the <see cref="Milo.Core.PropertyDataCollection"/> class.
 		/// </summary>
 		/// <param name="collection">Collection.</param>
-		public PropertyDataCollection (ICollection<PropertyData> collection) 
+		public PropertyDataCollection (IEnumerable<PropertyData> collection) 
 		{
-			this._propertyList = new List<PropertyData> ((IEnumerable<PropertyData>)collection);
+			_propertyList = new List<PropertyData> (collection);
 		}
 
 		/// <summary>
@@ -116,7 +119,7 @@ namespace Milo.Core
 		/// </summary>
 		public void Clear () 
 		{
-			this._propertyList.Clear ();
+			_propertyList.Clear ();
 		}
 
 		/// <summary>
@@ -127,9 +130,12 @@ namespace Milo.Core
 		/// <exception cref="System.ArgumentNullException">value;Cannot add null object to PropertyDataCollection</exception>
 		public void Insert(int index, PropertyData page)
 		{
-			if (page == null)
-				throw new ArgumentNullException("value", "Cannot add null object to PropertyDataCollection");
-			this._propertyList.Insert(index, page);
+		    if (page == null)
+		    {
+		        throw new ArgumentNullException("value", "Cannot add null object to PropertyDataCollection");
+		    }
+
+		    _propertyList.Insert(index, page);
 		}
 
 		/// <summary>
@@ -138,7 +144,7 @@ namespace Milo.Core
 		/// <param name="index">The zero-based index of the item to remove.</param>
 		public void RemoveAt(int index)
 		{
-			this._propertyList.RemoveAt(index);
+			_propertyList.RemoveAt(index);
 		}
 
 		/// <summary>
@@ -151,14 +157,18 @@ namespace Milo.Core
 		{
 			get
 			{
-				return (object)this[index];
+				return this[index];
 			}
 			set
 			{
 				PropertyData propertyData = value as PropertyData;
-				if (propertyData == null)
-					throw new ArgumentException("Must be of type PropertyData");
-				this[index] = propertyData;
+			    
+                if (propertyData == null)
+			    {
+			        throw new ArgumentException("Must be of type PropertyData");
+			    }
+
+			    this[index] = propertyData;
 			}
 		}
 
@@ -169,7 +179,7 @@ namespace Milo.Core
 		/// <param name="count">The count.</param>
 		public void RemoveRange(int index, int count)
 		{
-			this._propertyList.RemoveRange(index, count);
+			_propertyList.RemoveRange(index, count);
 		}
 
 		/// <summary>
@@ -178,7 +188,7 @@ namespace Milo.Core
 		/// <param name="comparer">The comparer.</param>
 		public void Sort(IComparer<PropertyData> comparer)
 		{
-			this._propertyList.Sort(comparer);
+			_propertyList.Sort(comparer);
 		}
 
 		/// <summary>
@@ -186,7 +196,7 @@ namespace Milo.Core
 		/// </summary>
 		public PropertyDataCollection Copy () 
 		{
-			return new PropertyDataCollection ((ICollection<PropertyData>)this._propertyList);
+			return new PropertyDataCollection (_propertyList);
 		}
 
 		/// <summary>
@@ -196,9 +206,12 @@ namespace Milo.Core
 		/// <exception cref="System.ArgumentNullException">value;Cannot add null object to PropertyDataCollection</exception>
 		public void Add(PropertyData page)
 		{
-			if (page == null)
-				throw new ArgumentNullException("value", "Cannot add null object to PropertyDataCollection");
-			this._propertyList.Add(page);
+		    if (page == null)
+		    {
+		        throw new ArgumentNullException("value", "Cannot add null object to PropertyDataCollection");
+		    }
+
+		    _propertyList.Add(page);
 		}
 
 		/// <summary>
@@ -210,7 +223,7 @@ namespace Milo.Core
 		/// </returns>
 		public bool Contains(PropertyData item)
 		{
-			return this._propertyList.Contains(item);
+			return _propertyList.Contains(item);
 		}
 
 		/// <summary>
@@ -220,7 +233,7 @@ namespace Milo.Core
 		/// <returns></returns>
 		public bool Remove(PropertyData page)
 		{
-			return this._propertyList.Remove(page);
+			return _propertyList.Remove(page);
 		}
 
 		/// <summary>
@@ -230,7 +243,7 @@ namespace Milo.Core
 		/// <param name="index">The zero-based index in <paramref name="array" /> at which copying begins.</param>
 		void ICollection.CopyTo(Array array, int index)
 		{
-			this._propertyList.ToArray().CopyTo(array, index);
+			_propertyList.ToArray().CopyTo(array, index);
 		}
 
 		/// <summary>
@@ -240,7 +253,7 @@ namespace Milo.Core
 		/// <param name="index">The index.</param>
 		public void CopyTo(PropertyData[] array, int index)
 		{
-			this._propertyList.CopyTo(array, index);
+			_propertyList.CopyTo(array, index);
 		}
 
 		/// <summary>
@@ -252,7 +265,7 @@ namespace Milo.Core
 		/// </returns>
 		public int IndexOf(PropertyData item)
 		{
-			return this._propertyList.IndexOf(item);
+			return _propertyList.IndexOf(item);
 		}
 
 		/// <summary>
@@ -266,10 +279,14 @@ namespace Milo.Core
 		public int Add(object value)
 		{
 			PropertyData property = value as PropertyData;
-			if (property == null)
-				throw new ArgumentException("Must be of type PropertyData", "value");
-			this.Add(property);
-			return this._propertyList.Count - 1;
+		    
+            if (property == null)
+		    {
+		        throw new ArgumentException("Must be of type PropertyData", "value");
+		    }
+
+		    Add(property);
+			return _propertyList.Count - 1;
 		}
 
 		/// <summary>
@@ -281,14 +298,11 @@ namespace Milo.Core
 		/// </returns>
 		public bool Contains(object value)
 		{
-			PropertyData propertyData = value as PropertyData;
-			if (propertyData == null)
-				return false;
-			else
-				return this.Contains(propertyData);
+		    PropertyData propertyData = value as PropertyData;
+		    return propertyData != null && Contains(propertyData);
 		}
 
-		/// <summary>
+	    /// <summary>
 		/// Determines the index of a specific item in the <see cref="T:System.Collections.IList" />.
 		/// </summary>
 		/// <param name="value">The object to locate in the <see cref="T:System.Collections.IList" />.</param>
@@ -298,10 +312,7 @@ namespace Milo.Core
 		public int IndexOf(object value)
 		{
 			PropertyData propertyData = value as PropertyData;
-			if (propertyData == null)
-				return -1;
-			else
-				return this.IndexOf(propertyData);
+	        return propertyData == null ? -1 : IndexOf(propertyData);
 		}
 
 		/// <summary>
@@ -313,9 +324,13 @@ namespace Milo.Core
 		public void Insert(int index, object value)
 		{
 			PropertyData propertyData = value as PropertyData;
-			if (propertyData == null)
-				throw new ArgumentException("Must be of type PropertyData", "value");
-			this.Insert(index, propertyData);
+
+		    if (propertyData == null)
+		    {
+		        throw new ArgumentException("Must be of type PropertyData", "value");
+		    }
+
+		    Insert(index, propertyData);
 		}
 
 		/// <summary>
@@ -325,9 +340,13 @@ namespace Milo.Core
 		public void Remove(object value)
 		{
 			PropertyData propertyData = value as PropertyData;
-			if (propertyData == null)
-				return;
-			this.Remove(propertyData);
+		    
+            if (propertyData == null)
+		    {
+		        return;
+		    }
+
+		    Remove(propertyData);
 		}
 
 		/// <summary>
@@ -349,7 +368,7 @@ namespace Milo.Core
 		/// </returns>
 		public IEnumerator<PropertyData> GetEnumerator()
 		{
-			return (IEnumerator<PropertyData>)this._propertyList.GetEnumerator();
+			return _propertyList.GetEnumerator();
 		}
 	}
 }

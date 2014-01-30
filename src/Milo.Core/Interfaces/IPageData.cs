@@ -9,5 +9,6 @@
 
         string PageName { get; set; }
         string PageTypeName { get; set; }
+        string PageSlug { get; set; }
     }
 }

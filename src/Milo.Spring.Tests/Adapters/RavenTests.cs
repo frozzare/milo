@@ -61,6 +61,8 @@ namespace Milo.Spring.Tests.Adapters
             var fake2 = db.Insert(fakePageData2);
             Assert.NotNull(fake2);
             Assert.NotNull(fake2.Id);
+
+            db.Disconnect();
         }
 
         /// <summary>
@@ -72,6 +74,8 @@ namespace Milo.Spring.Tests.Adapters
             var db = Raven.Connect();
             var result = db.Query<FakePageData>().Where(p => p.PageName.Equals("Raven db test page"));
             Assert.NotNull(result.Any()); // False is ok as result too.
+
+            db.Disconnect();
         }
 
     }

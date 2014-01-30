@@ -13,7 +13,7 @@ namespace Milo.Core
         /// <summary>
         /// The languages for this page.
         /// </summary>
-        private List<string> _languages;
+        private readonly List<string> _languages;
 
         /// <summary>
         /// Gets the parent page.
@@ -32,11 +32,10 @@ namespace Milo.Core
         /// <summary>
         /// Gets or sets the name of the page.
         /// </summary>
-        /// <value>The name of the page.</value>
-        public string PageName
-        {
-            get; set;
-        }
+        /// <value>
+        /// The name of the page.
+        /// </value>
+        public string PageName { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the page type.
@@ -44,10 +43,15 @@ namespace Milo.Core
         /// <value>
         /// The name of the page type.
         /// </value>
-        public string PageTypeName
-        {
-            get; set;
-        }
+        public string PageTypeName { get; set; }
+
+        /// <summary>
+        /// Get or sets the slug of the page.
+        /// </summary>
+        /// <value>
+        /// The slug of the page.
+        /// </value>
+        public string PageSlug { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the page is in edit mode.
@@ -68,7 +72,9 @@ namespace Milo.Core
         /// <summary>
         /// Gets the page languages.
         /// </summary>
-        /// <value>The page languages.</value>
+        /// <value>
+        /// The page languages.
+        /// </value>
         public virtual List<string> PageLanguages
         {
             get
